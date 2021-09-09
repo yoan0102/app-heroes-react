@@ -10,7 +10,7 @@ const LoginScreen = ({ history }) => {
     dispatch({
       type: types.login,
       payload: {
-        name: "Carmelis",
+        name: "Yoan",
       },
     });
     history.replace(lastPath);

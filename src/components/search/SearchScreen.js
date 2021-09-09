@@ -4,6 +4,7 @@ import { HeroCard } from "../heroes/HeroCard/HeroCard";
 import { useLocation } from "react-router-dom";
 import { getHeroesByName } from "../../selectors/getHeoresByName";
 // import { useMemo } from "react";
+
 export const SearchScreen = ({ history }) => {
   const location = useLocation();
 
@@ -43,6 +44,7 @@ export const SearchScreen = ({ history }) => {
               name="searchText"
               value={searchText}
               onChange={handleInputChange}
+              autoComplete="off"
             />
 
             <button

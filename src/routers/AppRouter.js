@@ -11,8 +11,6 @@ const AppRouter = () => {
   return (
     <Router>
       <div>
-        {/* <Navbar /> */}
-
         <Switch>
           <PublicRoute
             exact
