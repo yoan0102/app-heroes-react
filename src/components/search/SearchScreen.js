@@ -1,12 +1,14 @@
 import queryString from "query-string";
 import useForm from "../../hooks/useForm";
+import { useNavigate } from 'react-router-dom';
 import { HeroCard } from "../heroes/HeroCard/HeroCard";
 import { useLocation } from "react-router-dom";
 import { getHeroesByName } from "../../selectors/getHeoresByName";
 // import { useMemo } from "react";
 
-export const SearchScreen = ({ history }) => {
+export const SearchScreen = () => {
   const location = useLocation();
+  const navigate = useNavigate()
 
   //Parseo de las query
   const { q = "" } = queryString.parse(location.search);
@@ -23,7 +25,7 @@ export const SearchScreen = ({ history }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     // heroesFiltered.filter(hero => hero.)
-    history.push(`?q=${searchText}`);
+    navigate(`?q=${searchText}`);
   };
   return (
     <div>

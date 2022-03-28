@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import DcScreen from "../components/dc/DcScreen";
 import HeroScreen from "../components/heroes/HeroScreen";
 import MarvelScreen from "../components/marvel/MarvelScreen";
@@ -11,13 +11,15 @@ const DashboardRoutes = () => {
       <Navbar />
 
       <div className="container mt-2">
-        <Switch>
-          <Route exact path="/marvel" component={MarvelScreen} />
-          <Route exact path="/hero/:heroeId" component={HeroScreen} />
-          <Route exact path="/dc" component={DcScreen} />
-          <Route exact path="/search" component={SearchScreen} />
-          <Redirect to="/marvel" />
-        </Switch>
+        <Routes>
+          <Route path="/marvel" element={<MarvelScreen />} />
+          <Route path="/hero/:heroeId" element={<HeroScreen />} />
+          <Route path="/dc" element={<DcScreen />} />
+          <Route path="/search" element={<SearchScreen />} />
+
+          <Route path="/" element={<MarvelScreen />} />
+
+        </Routes>
       </div>
     </>
   );

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../auth/AuthContext";
 import { types } from "../../types/types";
+import { useNavigate } from "react-router";
 
-const LoginScreen = ({ history }) => {
+const LoginScreen = () => {
   const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleClick = () => {
     const lastPath = localStorage.getItem("lastPath") || "/";
@@ -13,7 +15,7 @@ const LoginScreen = ({ history }) => {
         name: "Yoan",
       },
     });
-    history.replace(lastPath);
+    navigate(lastPath);
   };
   return (
     <div className="container mt-5">
